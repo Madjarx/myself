@@ -6,7 +6,8 @@ My personal website. Plain HTML and CSS, no build step.
 
 1. Copy `writing/_template.html` to `writing/my-new-post.html` (or `dreams/...`).
 2. Edit the title, date and text. The template shows every element you might need.
-3. Add a line linking to it in `writing.html` (and `index.html` if it should be on the homepage).
+3. Add a line linking to it in `writing.html`, and update the 3 most recent on `index.html` (dreams go only in `index.html`).
+   Or just ask Claude to run `/check-content`, which does this for you.
 4. Commit and push to `master`. GitHub Pages republishes the site in about a minute.
 
 Books, endeavours, songs, movies and random links are just list items in `index.html`.
