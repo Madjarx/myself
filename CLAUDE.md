@@ -24,6 +24,7 @@ index.html              homepage: everything on one page
 writing.html            all writing, grouped into Work / Experiments / Thoughts
 writing/<slug>.html     one page per piece of writing
 writing/_template.html  template for new pages (also viewable on the site, but unlinked)
+wallpapers.html         wallpaper gallery, linked from Random
 dreams/<slug>.html      one page per dream
 images/                 all images
 style.css, site.js
@@ -32,7 +33,7 @@ style.css, site.js
 ### Homepage (`index.html`), in this order
 
 1. `<button id="theme">Dark</button>`
-2. Contact line: Twitter · GitHub · Telegram · Discord (new tab) · email text + Copy button
+2. Contact line: Twitter · GitHub · Telegram (links, new tab) · `Discord: madjarx` + Copy button (Discord has no username URLs) · email + Copy button (commented out until there is one)
 3. `<hr>`
 4. `<h1>` name, then **one** intro paragraph
 5. Section links (`#writing`, `#endeavours`, `#books`, `#dreams`, `#random`)
@@ -41,7 +42,7 @@ style.css, site.js
    - **Endeavours** (`#endeavours`): previous major work — projects, companies
    - **Books** (`#books`)
    - **Dreams** (`#dreams`): actual dreams from sleep; every dream, newest first
-   - **Random** (`#random`): general links, then `<h3>Songs</h3>` and `<h3>Movies</h3>`
+   - **Random** (`#random`): general links, then `<h3>Songs</h3>`, `<h3>Movies</h3>` and `<h3>Wallpapers</h3>` (with a `See all` button to `wallpapers.html`)
 7. `<hr>` and `<p><small>Last updated <span id="updated">recently</span>.</small></p>`
 
 ### List item formats
@@ -98,6 +99,11 @@ In `images/`, lowercase hyphenated names, always with `alt` text. Paths are rela
 (`../images/x.jpg` from entry pages, `images/x.jpg` from `index.html`). Photos should be
 resized to about 1600px wide before committing, so the repo stays small.
 
+Wallpapers are the exception: they live in `images/wallpapers/` at full resolution (they're meant
+to be downloaded), each wrapped in a link to the file:
+`<p><a href="images/wallpapers/x.jpg"><img src="images/wallpapers/x.jpg" alt="..."></a></p>`, newest first.
+Flag any single wallpaper over ~5 MB.
+
 ## Content check (run every time content is added or changed)
 
 Whenever Luka adds or edits content (a new article, dream, book, project, song, movie, anything) — or runs `/check-content` — check it against the structure above and **fix anything that doesn't match**, then briefly say what was fixed. Specifically:
@@ -109,7 +115,7 @@ Whenever Luka adds or edits content (a new article, dream, book, project, song, 
 - [ ] The homepage Writing list shows exactly the 3 most recent writing entries.
 - [ ] List items use the formats above; dated lists are newest first.
 - [ ] External links have `target="_blank" rel="noopener"`; internal links are relative and point to files that exist.
-- [ ] Images exist, are in `images/`, have `alt` text, and aren't huge (flag anything over ~500 KB).
+- [ ] Images exist, are in `images/`, have `alt` text, and aren't huge (flag anything over ~500 KB; wallpapers over ~5 MB).
 - [ ] No new classes, inline styles, colors, fonts, scripts or frameworks crept in.
 - [ ] Sections on the homepage are still separated by `<hr>`.
 - [ ] Leftover placeholder text (lorem ipsum, example.com) is flagged, not silently kept.
